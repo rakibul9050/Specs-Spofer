@@ -134,13 +134,47 @@ mv /usr/bin/lscpu /usr/bin/lscpu.real 2>/dev/null
 
 cat > /usr/bin/lscpu <<EOF
 #!/bin/bash
-echo "Architecture: x86_64"
-echo "CPU(s): $CORES"
-echo "Vendor ID: AuthenticAMD"
-echo "Model name: $CPUNAME"
-echo "Thread(s) per core: 1"
-echo "Core(s) per socket: $CORES"
-echo "Socket(s): 1"
+
+echo "Architecture:             x86_64"
+echo "  CPU op-mode(s):         32-bit, 64-bit"
+echo "  Address sizes:          48 bits physical, 48 bits virtual"
+echo "  Byte Order:             Little Endian"
+echo "CPU(s):                   $CORES"
+echo "  On-line CPU(s) list:    0-$(($CORES-1))"
+echo "Vendor ID:                AuthenticAMD"
+echo "  BIOS Vendor ID:         QEMU"
+echo "  Model name:             $CPUNAME"
+echo "    BIOS Model name:      pc-i440fx-9.0  CPU @ 2.0GHz"
+echo "    BIOS CPU family:      1"
+echo "    CPU family:           26"
+echo "    Model:                68"
+echo "    Thread(s) per core:   1"
+echo "    Core(s) per socket:   $CORES"
+echo "    Socket(s):            1"
+echo "    Stepping:             1"
+echo "    BogoMIPS:             11400.00"
+echo "    Flags:                fpu sse sse2 sse3 ssse3 sse4_1 sse4_2 avx avx2 aes xsave"
+
+echo "Virtualization features:"
+echo "  Hypervisor vendor:      KVM"
+echo "  Virtualization type:    full"
+
+echo "Caches (sum of all):"
+echo "  L1d:                    $((32*CORES)) KiB ($CORES instances)"
+echo "  L1i:                    $((32*CORES)) KiB ($CORES instances)"
+echo "  L2:                     $((4096*CORES/1024)) MiB ($CORES instances)"
+echo "  L3:                     16 MiB (1 instance)"
+
+echo "NUMA:"
+echo "  NUMA node(s):           1"
+echo "  NUMA node0 CPU(s):      0-$(($CORES-1))"
+
+echo "Vulnerabilities:"
+echo "  Gather data sampling:   Not affected"
+echo "  Itlb multihit:          Not affected"
+echo "  Meltdown:               Mitigation; PTI"
+echo "  Spectre v1:             Mitigation; usercopy/swapgs barriers"
+echo "  Spectre v2:             Mitigation; Retpolines"
 EOF
 
 chmod +x /usr/bin/lscpu
