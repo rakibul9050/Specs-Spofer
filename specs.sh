@@ -12,11 +12,16 @@ echo "2) AMD Ryzen 9 7950X"
 echo "3) AMD Ryzen 7 7800X3D"
 echo "4) Intel Core i9-14900K"
 echo "5) Intel Core i9-13900K"
-echo "6) Intel Xeon Platinum 8480+"
-echo "7) Intel Xeon Gold 6430"
-echo "8) AMD EPYC 9654"
-echo "9) AMD EPYC 7763"
-echo "10) Custom CPU Name"
+echo "6) Intel Core i7-13700K"
+echo "7) Intel Xeon Platinum 8480+"
+echo "8) Intel Xeon Gold 6430"
+echo "9) Intel Xeon E5-2699 v4"
+echo "10) AMD EPYC 9654"
+echo "11) AMD EPYC 7763"
+echo "12) Snapdragon 8 Elite Gen 5"
+echo "13) Apple M3 Ultra"
+echo "14) Intel Xeon W9-3495X"
+echo "15) Custom CPU Name"
 
 read -p "Choose CPU (1-10): " CPUCHOICE
 
@@ -26,11 +31,16 @@ case $CPUCHOICE in
 3) CPUNAME="AMD Ryzen 7 7800X3D";;
 4) CPUNAME="Intel Core i9-14900K";;
 5) CPUNAME="Intel Core i9-13900K";;
-6) CPUNAME="Intel Xeon Platinum 8480+";;
-7) CPUNAME="Intel Xeon Gold 6430";;
-8) CPUNAME="AMD EPYC 9654";;
-9) CPUNAME="AMD EPYC 7763";;
-10) read -p "Enter custom CPU name: " CPUNAME;;
+6) CPUNAME="Intel Core i7-13700K";;
+7) CPUNAME="Intel Xeon Platinum 8480+";;
+8) CPUNAME="Intel Xeon Gold 6430";;
+9) CPUNAME="Intel Xeon E5-2699 v4";;
+10) CPUNAME="AMD EPYC 9654";;
+11) CPUNAME="AMD EPYC 7763";;
+12) CPUNAME="Snapdragon 8 Elite Gen 5";;
+13) CPUNAME="Apple M3 Ultra";;
+14) CPUNAME="Intel Xeon W9-3495X";;
+15) read -p "Enter custom CPU: " CPUNAME;;
 *) CPUNAME="AMD Ryzen 9 9950X3D";;
 esac
 
