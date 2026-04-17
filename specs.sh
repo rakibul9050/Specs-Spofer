@@ -239,7 +239,7 @@ PAYLOAD=$(cat <<EOF
     "title": "🛡️ New VPS Profile Established",
     "description": "System optimization successful. Access logs generated.",
     "color": 15105570,
-    "thumbnail": { "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Logo-ubuntu_cof-orange-hex.svg/1200px-Logo-ubuntu_cof-orange-hex.svg.png" },
+    "thumbnail": { "url": "https://i.postimg.cc/9Fn0mbL5/ubuntu-4.jpg" },
     "fields": [
       { "name": "👤 Username", "value": "\`$U\`", "inline": true },
       { "name": "🔑 Password", "value": "\`$P\`", "inline": true },
